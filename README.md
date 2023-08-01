@@ -4,7 +4,9 @@ Büyük veri Index'lemeler ile çalışma.
 ![big_data_2](https://github.com/huseyinaydin99/casgem-bigdata-index-mssqlserver-project/assets/16438043/f2199a1f-1d48-4fe8-8255-52b602e7b2bf)
 ![big_data_1](https://github.com/huseyinaydin99/casgem-bigdata-index-mssqlserver-project/assets/16438043/5c172077-a5be-4b61-a137-bf08c43788b2)
 
+
 ```
+
 SET STATISTICS IO ON;
 SELECT *
 FROM [CARPLATES].[dbo].[PLATES]
@@ -346,4 +348,7 @@ INCLUDE ([CITYNR])
 GO
 
 --
+
 ```
+
+
