@@ -2,8 +2,8 @@
 {
     public class CityOfShiftTypeDto
     {
-        public int CityNr { get; set; }
-        public string ShiftType { get; set; }
-        public int ShiftCount { get; set; }
+        public int CITYNR { get; set; }
+        public string EN_COK_TERCIH_EDILEN_VITES_TIPI { get; set; }
+        public int TOPLAM_SAYISI { get; set; }
     }
 }

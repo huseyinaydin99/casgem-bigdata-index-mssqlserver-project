@@ -2,8 +2,8 @@
 {
     public class CityBrandDto
     {
-        public int CityNr { get; set; }
-        public string Brand { get; set; }
-        public int BrandCount { get; set; }
+        public int CITYNR { get; set; }
+        public string MARKA { get; set; }
+        public int MARKA_SAYISI { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class MinimumColorDto
     {
-        public int ColorCount { get; set; }
-        public string Color { get; set; }
+        public int RENK_ADETI { get; set; }
+        public string RENK { get; set; }
     }
 }

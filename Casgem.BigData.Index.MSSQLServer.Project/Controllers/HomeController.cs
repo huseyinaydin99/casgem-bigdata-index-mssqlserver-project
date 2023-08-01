@@ -15,18 +15,18 @@ namespace Casgem.BigData.Index.MSSQLServer.Project.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index_2","CarPlates");
         }
 
         public IActionResult Privacy()
         {
-            return View();
-        }
+            return RedirectToAction("Index_2", "CarPlates");
+		}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+            return RedirectToAction("Index_2", "CarPlates");
+		}
     }
 }

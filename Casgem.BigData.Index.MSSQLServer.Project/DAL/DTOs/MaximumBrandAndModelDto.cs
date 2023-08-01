@@ -2,8 +2,8 @@
 {
     public class MaximumBrandAndModelDto
     {
-        public int BrandCount { get; set; }
-        public string Brand { get; set; }
-        public string Model { get; set; }
+        public int MARKA_SAYISI { get; set; }
+        public string BRAND { get; set; }
+        public string MODEL { get; set; }
     }
 }

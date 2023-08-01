@@ -2,8 +2,8 @@
 {
     public class LicenceDateBrandModelDto
     {
-        public DateTime LicenceDate { get; set; }
-        public int BrandCount { get; set; }
-        public int ModelCount { get; set; }
+        public DateTime LICENCEDATE { get; set; }
+        public int BRAND_COUNT { get; set; }
+        public int MODEL_COUNT { get; set; }
     }
 }

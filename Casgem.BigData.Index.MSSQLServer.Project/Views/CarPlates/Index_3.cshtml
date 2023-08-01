@@ -1,5 +1,4 @@
-﻿@using Casgem.BigData.Index.MSSQLServer.Project.DAL.DTOs;
-@model Casgem.BigData.Index.MSSQLServer.Project.Models.ShowQueryResultView;
+﻿@model List<Casgem.BigData.Index.MSSQLServer.Project.Models.SearchQueryResultViewModel>
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -167,7 +166,7 @@
                     <div class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                             <i class="icon feather icon-bell"></i>
-                           
+
                         </a>
                         <div class="dropdown-menu dropdown-menu-right notification">
                             <div class="noti-head">
@@ -279,98 +278,38 @@
             <div class="row">
                 <!-- [ card ] start -->
                 <div class="col-xl-6">
-                    
-                    <h5 class="mt-4">Card Styles</h5>
+                    <h5>Arama Yapınız:</h5>
                     <hr>
-                    <div class="row-xl-6">
-                        <div class="col-sm-20">
-                            <div class="card text-white bg-primary ">
-                                <div class="card-header">En çok tercih edilen marka ve model.</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Model : @Model.MaximumBrandAndModels[0].MODEL | Marka: @Model.MaximumBrandAndModels[0].BRAND | Marka Sayısı: @Model.MaximumBrandAndModels[0].MARKA_SAYISI</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="post">
+                                <label>Marka / Plaka / Vites Tipi / Yakıt | kolonları üzerinden arama yapabilirsiniz: <label>
+                                <input type="text" class="form-control" name="searchQuery" placeholder="Arama yapınız: " />
+                                <button class="btn btn-primary">Ara</button>
+                            </form>
                         </div>
                     </div>
-                    <div class="row-xl-14">
-                        <div class="col-sm-20">
-                            <div class="card text-white bg-secondary ">
-                                <div class="card-header">En az tercih edilen renk.</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Renk Sayısı: @Model.MinimumColors[0].RENK_ADETI | Renk: @Model.MinimumColors[0].RENK</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Marka</th>
+                                    <th>Plaka</th>
+                                    <th>Vites Tipi</th>
+                                    <th>Yakıt</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.BRAND</td>
+                                        <td>@item.PLATE</td>
+                                        <td>@item.SHIFTTYPE</td>
+                                        <td>@item.FUEL</td>
+                                    </tr>
+                                }
+                            </table>
                         </div>
                     </div>
-                    <div class="row-xl-6">
-                        <div class="col-sm-20">
-                            <div class="card text-white bg-success ">
-                                <div class="card-header">Lisans tarihi 2008 veya üst olan araçların içerisinde lisans tarihi en üst olan aracın lisans tarihi.</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Lisans Tarihi: @Model.LicenceDateBrandModels[0].LICENCEDATE |Marka Sayısı: @Model.LicenceDateBrandModels[0].BRAND_COUNT</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-xl-6">
-                        <div class="col-sm-20">
-                            <div class="card text-white bg-danger ">
-                                <div class="card-header">İstanbul'da en az hangi araçtan kaç tane var?</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Şehir Numarası: @Model.CityBrands[0].CITYNR (İstanbul) | Marka: @Model.CityBrands[0].MARKA |Marka Sayısı @Model.CityBrands[0].MARKA_SAYISI</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-xl-6">
-                        <div class="col-sm-20">
-                            <div class="card text-white bg-warning ">
-                                <div class="card-header">En fazla tercih edilen motor hacmi.</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">En Çok Tercih Edilen Motor Hacmi: @Model.MaximumMotorVolumes[0].EN_COK_TERCIH_EDILEN_MOTOR_HACMI |Toplam Adeti:  @Model.MaximumMotorVolumes[0].TOPLAM_SAYISI</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-xl-6">
-                        <div class="col-sm-20">
-                            <div class="card text-white bg-info ">
-                                <div class="card-header">ISTANBUL'DA EN FAZLA TERCIH EDILEN DUZ VITES TIPI</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Şehir No: @Model.CityOfManuelShiftTypes[0].CITYNR | En Çok Kullanılan Vites Tipi: @Model.CityOfManuelShiftTypes[0].EN_COK_TERCIH_EDILEN_VITES_TIPI | Toplam Sayısı: @Model.CityOfManuelShiftTypes[0].TOPLAM_SAYISI</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-xl-6">
-                        <div class="col-sm-20">
-                            <div class="card bg-light">
-                                <div class="card-header">ISTANBUL'DA EN FAZLA TERCIH EDILEN OTOMATIK VITES TIPI</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Şehir No: @Model.CityOfManuelShiftTypes[0].CITYNR | En Çok Kullanılan Vites Tipi: @Model.CityOfManuelShiftTypes[0].EN_COK_TERCIH_EDILEN_VITES_TIPI | Toplam Sayısı: @Model.CityOfManuelShiftTypes[0].TOPLAM_SAYISI</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--
-                    <div class="col-sm-4">
-                        <div class="card text-white bg-dark ">
-                            <div class="card-header">Header</div>
-                            <div class="card-body">
-                                <h5 class="card-title text-white">Dark card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
             <!-- [ card ] end -->

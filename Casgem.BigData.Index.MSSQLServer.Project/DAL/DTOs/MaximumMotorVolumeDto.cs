@@ -2,7 +2,7 @@
 {
     public class MaximumMotorVolumeDto
     {
-        public string MotorVolume { get; set; }
-        public int MotorVolumeCount { get; set; }
+        public string EN_COK_TERCIH_EDILEN_MOTOR_HACMI { get; set; }
+        public int TOPLAM_SAYISI { get; set; }
     }
 }
