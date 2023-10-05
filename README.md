@@ -1,4 +1,4 @@
-# casgem-bigdata-index-mssqlserver-project
+## casgem-bigdata-index-mssqlserver-project
 Büyük veri Index'lemeler ile çalışma.
 #### Proje görselleri:
 ![big_data_2](https://github.com/huseyinaydin99/casgem-bigdata-index-mssqlserver-project/assets/16438043/f2199a1f-1d48-4fe8-8255-52b602e7b2bf)
